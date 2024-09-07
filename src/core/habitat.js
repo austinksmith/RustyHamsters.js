@@ -5,7 +5,7 @@
 * Description: 100% Vanilla Javascript Multithreading & Parallel Execution Library *
 * Author: Austin K. Smith                                                          *
 * Contact: austin@asmithdev.com                                                    *  
-* Copyright: 2015 Austin K. Smith - austin@asmithdev.com                           * 
+* Copyright: 2024 Austin K. Smith - austin@asmithdev.com                           * 
 * License: Artistic License 2.0                                                    *
 ***********************************************************************************/
 

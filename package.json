@@ -1,16 +1,12 @@
 {
-  "name": "hamsters.js",
+  "name": "RustyHamsters.js",
   "author": "Austin K Smith",
   "description": "100% Vanilla Javascript Multithreading & Parallel Execution Library",
   "homepage": "http://www.hamsters.io/",
-  "version": "5.6.0",
-  "main": "build/hamsters.node.min.js",
+  "version": "1.0.0",
+  "main": "build/rustyHamsters.node.min.js",
   "scripts": {
     "build": "rm -rf ./build && webpack --config ./webpack.config.js && npm run copy-common && npm run copy-build",
-    "build-react-native": "rm -rf ./build && webpack --config ./webpack.config.js && npm run copy-common && cp -r ./build/* ../react-native-hamsters/examples/HamstersJS/node_modules/hamsters.js/build/",
-    "build-node": "npm run build && cp -r ./build/. ../hamsters-io/node_modules/hamsters.js/build/.",
-    "build-challenge": "npm run build && cp -r ./build/. ../1-billion-row-challenge/node_modules/hamsters.js/build/.",
-    "build-socket": "npm run build && cp -r ./build/. ../hamsters-socket/public/.",
     "copy-common": "mkdir ./build/common && cp -a ./src/common/. ./build/common/",
     "copy-build": "cp -r ./build/. ../hamsters-io/public/js/benchmark/.",
     "test": "karma start --reporters dots",
@@ -19,7 +15,7 @@
   "license": "Artistic-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/austinksmith/Hamsters.js.git"
+    "url": "git+https://github.com/austinksmith/RustyHamsters.js.git"
   },
   "keywords": [
     "multithreading",
@@ -47,7 +43,7 @@
     "cluster"
   ],
   "bugs": {
-    "url": "https://github.com/austinksmith/Hamsters.js/issues"
+    "url": "https://github.com/austinksmith/RustyHamsters.js/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

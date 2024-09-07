@@ -5,7 +5,7 @@
 * Description: 100% Vanilla Javascript Multithreading & Parallel Execution Library *
 * Author: Austin K. Smith                                                          *
 * Contact: austin@asmithdev.com                                                    *  
-* Copyright: 2015 Austin K. Smith - austin@asmithdev.com                           * 
+* Copyright: 2024 Austin K. Smith - austin@asmithdev.com                           * 
 * License: Artistic License 2.0                                                    *
 ***********************************************************************************/
 
@@ -141,24 +141,6 @@ class Pool {
   }
 
   /**
-  * @function runDistributedTask - Runs incoming distributed function using thread
-  * @param {object} incomingMessage - The incoming subTask object
-  */
-  runDistributedTask(incomingMessage, targetClient) {
-    const hamster = this.fetchHamster(this.running.length);
-    let task = incomingMessage.task;
-    let index = incomingMessage.hamsterFood.index;
-    let handleResponse = this.hamsters.distribute.returnDistributedOutput;
-    task.targetClient = targetClient;
-    task.messageId = incomingMessage.messageId;
-    task.isReply = true;
-
-    this.runTask(hamster, index, incomingMessage.hamsterFood, incomingMessage.task, handleResponse, handleResponse);
-  }
-
-
-
-  /**
   * @function runTask - Runs function using thread
   * @param {object} hamster - The thread to run the task
   * @param {number} index - Index of the subarray to process
@@ -190,17 +172,9 @@ class Pool {
     if (this.hamsters.habitat.maxThreads <= this.running.length) {
       this.addWorkToPending(index, hamsterFood, task, resolve, reject);
     } else {
-      if(task.input.distribute) {
-        this.hamsters.distribute.distributeTask(task, hamsterFood, resolve, reject);
-      } else {
-        const hamster = this.fetchHamster(this.running.length);
-        this.runTask(hamster, index, hamsterFood, task, resolve, reject);
-      }
+      const hamster = this.fetchHamster(this.running.length);
+      this.runTask(hamster, index, hamsterFood, task, resolve, reject);
     }
-  }
-
-  processDistributedReturn(data) {
-    debugger;
   }
 
   /**
@@ -222,11 +196,7 @@ class Pool {
       task.scheduler.metrics.completed_at = Date.now();
       console.info("Hamsters.js Task Completed: ", task);
     }
-    if(task.input.distribute) {
-      resolve(task);
-    } else {
-      resolve(task.output);
-    }
+    resolve(task.output);
   }
 
   /**

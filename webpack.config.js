@@ -4,10 +4,10 @@ const webConfig = {
   target: 'web',
   devtool: 'source-map',
   context: path.resolve(__dirname, 'src'),
-  entry: './hamsters',
+  entry: './rustyHamsters',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'hamsters.web.min.js',
+    filename: 'rustyHamsters.web.min.js',
     library: {
       name: 'hamsters',
       type: 'umd',
@@ -38,10 +38,10 @@ const nodeConfig = {
   target: 'node',
   devtool: 'source-map',
   context: path.resolve(__dirname, 'src'),
-  entry: './hamsters',
+  entry: './rustyHamsters',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'hamsters.node.min.js',
+    filename: 'rustyHamsters.node.min.js',
     library: {
       name: 'hamsters',
       type: 'umd',
@@ -52,7 +52,6 @@ const nodeConfig = {
     rules: [
       {
         test: /\.js$/,
-        exclude: path.resolve(__dirname, 'src/core/wheel.js'),
         use: {
           loader: 'babel-loader',
           options: {

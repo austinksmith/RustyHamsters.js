@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rust + Wasm Example</title>
+    <script type="module">
+        import init, { add } from '../pkg/rustyhamsters.js';
+
+        async function run() {
+            await init();
+            console.log('5 + 3 =', add(5, 3));
+        }
+
+        run();
+    </script>
+</head>
+<body>
+    <h1>Check the console for results!</h1>
+</body>
+</html>
