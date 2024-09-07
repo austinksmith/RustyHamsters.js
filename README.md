@@ -8,25 +8,6 @@
 
 **License**: Artistic License 2.0
 
-[![npm version](https://img.shields.io/npm/v/hamsters.js.svg?style=flat-square)](https://www.npmjs.com/package/hamsters.js)
-[![downloads](https://img.shields.io/npm/dm/hamsters.js.svg?style=flat-square)](https://www.npmjs.com/package/hamsters.js)
-
-# Examples
-
-You can find a view examples of the library in action using the links below.
-
-
-[Atomic Operations](https://www.hamsters.io/examples/atomic-operations)
-
-[Collatz Conjecture](https://www.hamsters.io/examples/collatz-conjecture)
-
-[Fibonacci Sequence](https://www.hamsters.io/examples/fibonacci-sequence)
-
-[Mandelbrot Set](https://www.hamsters.io/examples/mandelbrot-set)
-
-[Square Root](https://www.hamsters.io/examples/square-root)
-
-
 # Installing Hamsters
 
 [HTML](https://www.hamsters.io/wiki/html)
